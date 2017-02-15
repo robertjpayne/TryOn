@@ -80,23 +80,46 @@ class GameViewController: UIViewController {
     func animateOnInterval(){
         UIView.animate(withDuration: animationInterval, animations: {
             
-            if let pitch = UserDefaults.standard.object(forKey: "pitch1") as? NSNumber,
-                let yaw = UserDefaults.standard.object(forKey: "yaw1") as? NSNumber,
-                let roll = UserDefaults.standard.object(forKey: "roll1") as? NSNumber {
-                var _pitch = Float(pitch)/57
-                var _yaw = -Float(yaw)
-                var _roll = -Float(roll)
-                print(roll)
-                self.ship.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
-            }
+           self.updateEuler()
 
         })
+//        self.animatePosition()
+    }
+    
+    func updateEuler(){
+        if let pitch = UserDefaults.standard.object(forKey: "pitch") as? NSNumber,
+            let yaw = UserDefaults.standard.object(forKey: "yaw") as? NSNumber,
+            let roll = UserDefaults.standard.object(forKey: "roll") as? NSNumber {
+            var _pitch = Float(pitch)//Float(pitch)/57
+            var _yaw = -Float(yaw)
+            var _roll = -Float(roll)
+//            print(pitch)
+            self.ship.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
+            
+            
+        }
         
-//        if let pitch = UserDefaults.standard.object(forKey: "pitch1") as? NSNumber {
-//            var _pitch = Float(pitch)
-//            print(Double(pitch))
-//            self.ship.runAction(SCNAction.move(to: SCNVector3(x:0,y:_pitch,z:0), duration: self.animationInterval))
-//        }
+        if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
+            let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
+            let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
+            let _xPos = Float(xPos)/4
+            let _yPos = -Float(yPos)/4
+            let _zPos = -Float(zPos)/6
+            print(zPos)
+            self.ship.position = SCNVector3(_xPos, _yPos, _zPos)
+        }
+    }
+    
+    func animatePosition(){
+        if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
+            let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
+            let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
+            let _xPos = Float(xPos)
+            let _yPos = -Float(yPos)
+            let _zPos = Float(zPos)
+            print(xPos)
+            self.ship.runAction(SCNAction.move(to: SCNVector3(_xPos,_yPos,0), duration: animationInterval))
+        }
     }
     
     override var shouldAutorotate: Bool {

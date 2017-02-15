@@ -68,12 +68,19 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
         /////
         /////CDD
         //Sending data for swift to handle
-        NSNumber *pitch = [NSNumber numberWithDouble:pose_estimate_to_draw[1]];
-        [[NSUserDefaults standardUserDefaults] setValue:pitch forKey:@"pitch1"];
+        NSNumber *pitch = [NSNumber numberWithDouble:pose_estimate_to_draw[3]];
+        [[NSUserDefaults standardUserDefaults] setValue:pitch forKey:@"pitch"];
         NSNumber *yaw = [NSNumber numberWithDouble:pose_estimate_to_draw[4]];
-        [[NSUserDefaults standardUserDefaults] setValue:yaw forKey:@"yaw1"];
+        [[NSUserDefaults standardUserDefaults] setValue:yaw forKey:@"yaw"];
         NSNumber *roll = [NSNumber numberWithDouble:pose_estimate_to_draw[5]];
-        [[NSUserDefaults standardUserDefaults] setValue:roll forKey:@"roll1"];
+        [[NSUserDefaults standardUserDefaults] setValue:roll forKey:@"roll"];
+        
+        NSNumber *xPos = [NSNumber numberWithDouble:pose_estimate_to_draw[0]];
+        [[NSUserDefaults standardUserDefaults] setValue:xPos forKey:@"xPos"];
+        NSNumber *yPos = [NSNumber numberWithDouble:pose_estimate_to_draw[1]];
+        [[NSUserDefaults standardUserDefaults] setValue:yPos forKey:@"yPos"];
+        NSNumber *zPos = [NSNumber numberWithDouble:pose_estimate_to_draw[2]];
+        [[NSUserDefaults standardUserDefaults] setValue:zPos forKey:@"zPos"];
         /////
         /////
         /////

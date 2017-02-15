@@ -41,7 +41,10 @@
     
     ///////////////////
 //    facear =[[FaceARDetectIOS alloc] init];
-    
+//    [self.videoCamera start];
+
+//    [self performSegueWithIdentifier:@"openSceneKitModally" sender:nil];
+
 }
 
 - (IBAction)startButtonPressed:(id)sender
