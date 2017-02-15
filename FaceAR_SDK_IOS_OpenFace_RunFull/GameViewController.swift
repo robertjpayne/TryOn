@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     
     var ship = SCNNode()
     
-    var animationInterval = 0.05
+    var animationInterval = 0.03
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,11 +79,9 @@ class GameViewController: UIViewController {
     ///INTERVAL ACTIONS:::::::::::::::
     func animateOnInterval(){
         UIView.animate(withDuration: animationInterval, animations: {
-            
-           self.updateEuler()
-
+            self.updateEuler()
+            self.updatePosition()
         })
-//        self.animatePosition()
     }
     
     func updateEuler(){
@@ -95,30 +93,19 @@ class GameViewController: UIViewController {
             var _roll = -Float(roll)
 //            print(pitch)
             self.ship.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
-            
-            
         }
         
+    
+    }
+    func updatePosition() {
         if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
             let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
             let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
             let _xPos = Float(xPos)/4
-            let _yPos = -Float(yPos)/4
+            let _yPos = -Float(yPos)/4 + 20
             let _zPos = -Float(zPos)/6
             print(zPos)
             self.ship.position = SCNVector3(_xPos, _yPos, _zPos)
-        }
-    }
-    
-    func animatePosition(){
-        if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
-            let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
-            let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
-            let _xPos = Float(xPos)
-            let _yPos = -Float(yPos)
-            let _zPos = Float(zPos)
-            print(xPos)
-            self.ship.runAction(SCNAction.move(to: SCNVector3(_xPos,_yPos,0), duration: animationInterval))
         }
     }
     

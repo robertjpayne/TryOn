@@ -47,7 +47,8 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     // Only draw if the reliability is reasonable, the value is slightly ad-hoc
     if (detection_certainty < visualisation_boundary)
     {
-        LandmarkDetector::Draw(captured_image, face_model);
+        //The green dots on the facial features:
+//        LandmarkDetector::Draw(captured_image, face_model);
         
         double vis_certainty = detection_certainty;
         if (vis_certainty > 1)
@@ -87,8 +88,8 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
         /////
         /////
         
-        // Draw it in reddish if uncertain, blueish if certain
-        LandmarkDetector::DrawBox(captured_image, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
+        // Draw it in reddish if uncertain, blueish if certain)
+//        LandmarkDetector::DrawBox(captured_image, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
     }
 }
 
@@ -128,7 +129,7 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     {
         GazeEstimate::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
         GazeEstimate::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
-        GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
+//        GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
     }
     
     return true;

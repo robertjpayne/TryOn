@@ -38,7 +38,7 @@
 		83B04FB31D2B8DAD008A9370 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FB21D2B8DAD008A9370 /* opencv2.framework */; };
 		955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE7351E53F448007D1A78 /* GameViewController.swift */; };
 		955BE7381E53F48A007D1A78 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 955BE7371E53F48A007D1A78 /* art.scnassets */; };
-		955BE73B1E53FA25007D1A78 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE73A1E53FA25007D1A78 /* Station.swift */; };
+		955BE73B1E53FA25007D1A78 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE73A1E53FA25007D1A78 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +113,7 @@
 		955BE7341E53F447007D1A78 /* FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h"; sourceTree = "<group>"; };
 		955BE7351E53F448007D1A78 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		955BE7371E53F48A007D1A78 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		955BE73A1E53FA25007D1A78 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		955BE73A1E53FA25007D1A78 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,7 +300,7 @@
 			children = (
 				955BE7351E53F448007D1A78 /* GameViewController.swift */,
 				955BE7371E53F48A007D1A78 /* art.scnassets */,
-				955BE73A1E53FA25007D1A78 /* Station.swift */,
+				955BE73A1E53FA25007D1A78 /* Config.swift */,
 			);
 			name = "SceneKit Stuff";
 			sourceTree = "<group>";
@@ -450,7 +450,7 @@
 				8304A0D01D2BBD1100E2E96B /* PDM.cpp in Sources */,
 				8304A0D21D2BBD1100E2E96B /* SVR_patch_expert.cpp in Sources */,
 				83B04F7C1D2B8BF4008A9370 /* ViewController.mm in Sources */,
-				955BE73B1E53FA25007D1A78 /* Station.swift in Sources */,
+				955BE73B1E53FA25007D1A78 /* Config.swift in Sources */,
 				83B04F791D2B8BF4008A9370 /* AppDelegate.mm in Sources */,
 				8304A0CB1D2BBD1100E2E96B /* LandmarkDetectorModel.cpp in Sources */,
 				8304A0D11D2BBD1100E2E96B /* stdafx.cpp in Sources */,

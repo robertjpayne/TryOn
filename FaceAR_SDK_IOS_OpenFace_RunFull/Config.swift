@@ -8,6 +8,5 @@
 
 import Foundation
 
-class Station {
-    
+class Config {
 }
