@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene(named: "art.scnassets/Glasses.scn")!
         
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -47,7 +47,7 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        ship = scene.rootNode.childNode(withName: "glasses", recursively: true)!
         
         // animate the 3d object
 //        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
@@ -73,7 +73,8 @@ class GameViewController: UIViewController {
         
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
-        
+        let s = 17
+        self.ship.scale = SCNVector3(s,s,s)
     }
     
     ///INTERVAL ACTIONS:::::::::::::::
@@ -82,6 +83,12 @@ class GameViewController: UIViewController {
             self.updateEuler()
             self.updatePosition()
         })
+        
+        if let pointX = UserDefaults.standard.object(forKey: "33x") as? NSNumber,
+            let pointY = UserDefaults.standard.object(forKey: "33y") as? NSNumber {
+            let point = CGPoint(x: pointX.doubleValue, y: pointY.doubleValue)
+            print(point)
+        }
     }
     
     func updateEuler(){
@@ -92,6 +99,10 @@ class GameViewController: UIViewController {
             var _yaw = -Float(yaw)
             var _roll = -Float(roll)
 //            print(pitch)
+            
+            //Adjust yaw for wonky glasses:
+            _yaw = _yaw - 0.2
+            
             self.ship.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
         }
         
@@ -104,7 +115,7 @@ class GameViewController: UIViewController {
             let _xPos = Float(xPos)/4
             let _yPos = -Float(yPos)/4 + 20
             let _zPos = -Float(zPos)/6
-            print(zPos)
+//            print(zPos)
             self.ship.position = SCNVector3(_xPos, _yPos, _zPos)
         }
     }

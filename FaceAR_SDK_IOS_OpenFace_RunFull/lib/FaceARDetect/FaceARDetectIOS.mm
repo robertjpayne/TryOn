@@ -48,8 +48,26 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     if (detection_certainty < visualisation_boundary)
     {
         //The green dots on the facial features:
-//        LandmarkDetector::Draw(captured_image, face_model);
+        //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        LandmarkDetector::Draw(captured_image, face_model);
+        //CDD
+        int n = face_model.detected_landmarks.rows/2;
+//        NSLog(@"x:%f,y:%f", face_model.detected_landmarks.at<double>(33),face_model.detected_landmarks.at<double>(33+n));
+
+        for( int i = 0; i < n; ++i) {
+            NSNumber *pointX = [NSNumber numberWithDouble:face_model.detected_landmarks.at<double>(i)];
+            NSString *keyX = [NSString stringWithFormat:@"%dx", i];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:pointX forKey:keyX];
+            
+            NSNumber *pointY = [NSNumber numberWithDouble:face_model.detected_landmarks.at<double>(i+n)];
+            NSString *keyY = [NSString stringWithFormat:@"%dy", i];
+            [[NSUserDefaults standardUserDefaults] setValue:pointY forKey:keyY];
+        }
         
+
+        //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         
         double vis_certainty = detection_certainty;
         if (vis_certainty > 1)
             vis_certainty = 1;

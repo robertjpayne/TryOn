@@ -1021,6 +1021,12 @@ void Draw(cv::Mat img, const cv::Mat_<double>& shape2D, const cv::Mat_<int>& vis
             if(visibilities.at<int>(i))
             {
                 cv::Point featurePoint((int)shape2D.at<double>(i), (int)shape2D.at<double>(i +n));
+                
+                //CDD C++
+                if (i == 33) {
+//                    printf("%d \n", (int)shape2D.at<double>(i));
+                    
+                }
 
                 // A rough heuristic for drawn point size
                 int thickness = (int)std::ceil(3.0* ((double)img.cols) / 640.0);
