@@ -73,7 +73,7 @@ class GameViewController: UIViewController {
         
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
-        let s = 17
+        let s = 14
         self.ship.scale = SCNVector3(s,s,s)
         
     }
@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         UIView.animate(withDuration: animationInterval, animations: {
             self.updateEuler()
             self.pinGlassesToNose()
-            self.updateCentralPosition()
+//            self.updateCentralPosition()
         })
         
 //        displayNumberLabels()
@@ -126,16 +126,36 @@ class GameViewController: UIViewController {
     }
     
     func pinGlassesToNose(){
-        let i = 30 //Point on Nose
+        let i = 27 //Point on Nose
         guard let pointX = UserDefaults.standard.object(forKey: "\(i)x") as? NSNumber,
             let pointY = UserDefaults.standard.object(forKey: "\(i)y") as? NSNumber,
             let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber else {return}
+        var _x = pointX.doubleValue
+        var _y = pointY.doubleValue
+        var _z = zPos.doubleValue
         
-        let x = pointX.doubleValue / 4
-        let y = (pointY.doubleValue + 45) / 4
-        let z = -Double(zPos)/6
-        self.ship.position = SCNVector3(x, y, z)
-//        self.ship.position = SCNVector3(100, 100, 100)
+//        print("x:\(pointX) y:\(pointY) z:\(zPos)")
+        let screenWidth = Double(480)
+        let screenHeight = Double(640)
+        
+        _x -= screenWidth/2
+        _y -= screenHeight/2
+//        print("x:\(_x) y:\(_y) z:\(_z)")
+        
+        //Raise glasses up a tad:
+        _y -= 50
+        
+        
+        //Fudge and flips:
+        _x /= 8
+        _y /= -8
+        _z /= -8
+        print("pinning to nose: x:\(_x) y:\(_y) z:\(_z)")
+        self.ship.position = SCNVector3(_x, _y, _z)
+//        self.ship.position = SCNVector3(100, 100, -100)
+        
+        //Curent problem: SCNVector3 uses a value in which 0 is at the center of the screen, yet the points we are using start the 0 value and the top/left.
+//        self.ship.position
 
     }
     
@@ -143,11 +163,12 @@ class GameViewController: UIViewController {
         if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
             let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
             let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
-            let _xPos = Float(xPos)/4
-            let _yPos = (-Float(yPos) + 20)/4
-            let _zPos = -Float(zPos)/6
-//            print(zPos)
-            self.ship.position = SCNVector3(_xPos, _yPos, _zPos)
+            let _x = Float(xPos)/4
+            let _y = (-Float(yPos) + 75)/4
+            let _z = -Float(zPos)/6
+
+            print("central Postion: x:\(_x) y:\(_y) z:\(_z)")
+            self.ship.position = SCNVector3(_x, _y, _z)
         }
     }
     
