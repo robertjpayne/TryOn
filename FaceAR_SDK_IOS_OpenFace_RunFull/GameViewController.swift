@@ -19,7 +19,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var scnView: SCNView!
     @IBOutlet weak var sliderValueLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
     
+    @IBOutlet weak var scnViewLittle: SCNView!
     var ship = SCNNode()
     
     var animationInterval = 0.05
@@ -78,10 +80,10 @@ class GameViewController: UIViewController {
         scnView.scene = scene
         
         // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
+//        scnView.allowsCameraControl = true
         
         // show statistics such as fps and timing information
-        scnView.showsStatistics = true
+//        scnView.showsStatistics = true
         
         // configure the view
         scnView.backgroundColor = UIColor.clear
@@ -93,10 +95,17 @@ class GameViewController: UIViewController {
         
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
-        
+        slider.isHidden = true
+        sliderValueLabel.isHidden = true
 
 
     }
+    
+    func setupLitteGuy(){
+        
+    }
+    
+    
     @IBAction func sliderChanged(_ sender: Any) {
         if let slider = sender as? UISlider {
             self.sliderValue = Double(slider.value)
