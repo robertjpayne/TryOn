@@ -10,6 +10,12 @@ import UIKit
 import QuartzCore
 import SceneKit
 
+
+//TODO:
+
+//A) Get a scn file with actual black glasses and clear lenses.
+//B) Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
+
 class GameViewController: UIViewController {
     
     @IBOutlet weak var scnView: SCNView!
@@ -17,12 +23,25 @@ class GameViewController: UIViewController {
     var ship = SCNNode()
     
     var animationInterval = 0.05
+    
+    enum Glasses {
+        case purple
+        case classyRims
+    }
+    var currentGlasses:Glasses = .purple
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // create a new scene
-        let scene = SCNScene(named: "art.scnassets/Glasses.scn")!
+        var fileName = ""
+        switch currentGlasses {
+        case .purple:
+            fileName = "Glasses"
+        default:
+            fileName = "Glasses5"
+        }
+        let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
         
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -73,9 +92,16 @@ class GameViewController: UIViewController {
         
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
-        let s = 14
+        var s:Double = 0
+        //Tweaks
+        switch currentGlasses {
+        case .purple:
+            s = 14
+        case .classyRims:
+            s = 0.05
+        }
         self.ship.scale = SCNVector3(s,s,s)
-        
+
     }
     
     ///INTERVAL ACTIONS:::::::::::::::
@@ -116,8 +142,13 @@ class GameViewController: UIViewController {
             var _roll = -Float(roll)
 //            print(pitch)
             
-            //Adjust yaw for wonky glasses:
-            _yaw = _yaw - 0.2
+            //Tweaks
+            switch currentGlasses {
+            case .purple:
+                _yaw = _yaw - 0.2
+            case .classyRims:
+                _pitch += 300
+            }
             
             self.ship.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
         }
@@ -142,20 +173,20 @@ class GameViewController: UIViewController {
         _y -= screenHeight/2
 //        print("x:\(_x) y:\(_y) z:\(_z)")
         
-        //Raise glasses up a tad:
-        _y -= 50
-        
+        //Tweaks
+        switch currentGlasses {
+        case .purple:
+            _y -= 50
+        case .classyRims:
+            break
+        }
         
         //Fudge and flips:
         _x /= 8
         _y /= -8
         _z /= -8
-        print("pinning to nose: x:\(_x) y:\(_y) z:\(_z)")
+//        print("pinning to nose: x:\(_x) y:\(_y) z:\(_z)")
         self.ship.position = SCNVector3(_x, _y, _z)
-//        self.ship.position = SCNVector3(100, 100, -100)
-        
-        //Curent problem: SCNVector3 uses a value in which 0 is at the center of the screen, yet the points we are using start the 0 value and the top/left.
-//        self.ship.position
 
     }
     
