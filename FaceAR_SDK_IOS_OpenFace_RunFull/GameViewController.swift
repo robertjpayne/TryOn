@@ -13,23 +13,24 @@ import SceneKit
 
 //TODO:
 
-//A) Get a scn file with actual black glasses and clear lenses.
-//B) Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
+// Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
 
 class GameViewController: UIViewController {
     
     @IBOutlet weak var scnView: SCNView!
+    @IBOutlet weak var sliderValueLabel: UILabel!
     
     var ship = SCNNode()
     
     var animationInterval = 0.05
-    
+    var sliderValue:Double = 0
+
     enum Glasses {
         case purple
         case classyRims
     }
-    var currentGlasses:Glasses = .purple
-
+    var currentGlasses:Glasses = .classyRims
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +40,7 @@ class GameViewController: UIViewController {
         case .purple:
             fileName = "Glasses"
         default:
-            fileName = "Glasses5"
+            fileName = "ClassyGlassesClearLenses"//"ClassyGlasses"
         }
         let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
         
@@ -92,16 +93,15 @@ class GameViewController: UIViewController {
         
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
-        var s:Double = 0
-        //Tweaks
-        switch currentGlasses {
-        case .purple:
-            s = 14
-        case .classyRims:
-            s = 0.05
-        }
-        self.ship.scale = SCNVector3(s,s,s)
+        
 
+
+    }
+    @IBAction func sliderChanged(_ sender: Any) {
+        if let slider = sender as? UISlider {
+            self.sliderValue = Double(slider.value)
+            sliderValueLabel.text = String(self.sliderValue)
+        }
     }
     
     ///INTERVAL ACTIONS:::::::::::::::
@@ -109,10 +109,24 @@ class GameViewController: UIViewController {
         UIView.animate(withDuration: animationInterval, animations: {
             self.updateEuler()
             self.pinGlassesToNose()
-//            self.updateCentralPosition()
+
+            //This can be placed in animateOnInterval() if you want to test it out with the slider:
+            self.updateScale()
         })
         
 //        displayNumberLabels()
+    }
+    
+    func updateScale() {
+        var s:Double = 0
+        //Tweaks
+        switch currentGlasses {
+        case .purple:
+            s = 14
+        case .classyRims:
+            s = 6.6
+        }
+        self.ship.scale = SCNVector3(s,s,s)
     }
     
     func displayNumberLabels() {
@@ -178,7 +192,8 @@ class GameViewController: UIViewController {
         case .purple:
             _y -= 50
         case .classyRims:
-            break
+            _y += 38
+            _z += 200
         }
         
         //Fudge and flips:
