@@ -49,7 +49,9 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     {
         //The green dots on the facial features:
         //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        LandmarkDetector::Draw(captured_image, face_model);
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showFaceMarkers"] == true) {
+            LandmarkDetector::Draw(captured_image, face_model);
+        }
         //CDD
         int n = face_model.detected_landmarks.rows/2;
 //        NSLog(@"x:%f,y:%f", face_model.detected_landmarks.at<double>(33),face_model.detected_landmarks.at<double>(33+n));
@@ -107,7 +109,9 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
         /////
         
         // Draw it in reddish if uncertain, blueish if certain)
-//        LandmarkDetector::DrawBox(captured_image, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showFaceMarkers"] == true) {
+            LandmarkDetector::DrawBox(captured_image, pose_estimate_to_draw, cv::Scalar((1 - vis_certainty)*255.0, 0, vis_certainty * 255), thickness, fx, fy, cx, cy);
+        }
     }
 }
 
@@ -147,7 +151,10 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
     {
         GazeEstimate::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
         GazeEstimate::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
-//        GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showFaceMarkers"] == true) {
+            GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
+        }
+        
     }
     
     return true;

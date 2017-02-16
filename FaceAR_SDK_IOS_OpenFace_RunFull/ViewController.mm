@@ -50,6 +50,13 @@
 - (IBAction)startButtonPressed:(id)sender
 {
     [self.videoCamera start];
+    
+    //CDD
+    [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showFaceMarkers"];
+}
+- (IBAction)toggleFaceMarkers:(id)sender {
+    bool currentValue = [[NSUserDefaults standardUserDefaults] boolForKey:@"showFaceMarkers"];
+    [[NSUserDefaults standardUserDefaults] setBool:!currentValue forKey:@"showFaceMarkers"];
 }
 
 - (void)processImage:(cv::Mat &)image

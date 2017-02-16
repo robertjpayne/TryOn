@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     
     var ship = SCNNode()
     
-    var animationInterval = 0.03
+    var animationInterval = 0.05
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,19 +75,35 @@ class GameViewController: UIViewController {
 
         let s = 17
         self.ship.scale = SCNVector3(s,s,s)
+        
     }
     
     ///INTERVAL ACTIONS:::::::::::::::
     func animateOnInterval(){
         UIView.animate(withDuration: animationInterval, animations: {
             self.updateEuler()
-            self.updatePosition()
+            self.pinGlassesToNose()
+            self.updateCentralPosition()
         })
         
-        if let pointX = UserDefaults.standard.object(forKey: "33x") as? NSNumber,
-            let pointY = UserDefaults.standard.object(forKey: "33y") as? NSNumber {
+//        displayNumberLabels()
+    }
+    
+    func displayNumberLabels() {
+        
+        for i in 0 ... 67 {
+            guard let pointX = UserDefaults.standard.object(forKey: "\(i)x") as? NSNumber,
+                let pointY = UserDefaults.standard.object(forKey: "\(i)y") as? NSNumber else {continue}
+            
             let point = CGPoint(x: pointX.doubleValue, y: pointY.doubleValue)
-            print(point)
+            
+            if let oldViewToRemove = self.view.viewWithTag(i + 1) {
+                oldViewToRemove.removeFromSuperview()
+            }
+            let label = UILabel(frame: CGRect(origin: point, size: CGSize(width: 50, height: 50)))
+            label.text = "\(i)"
+            label.tag = i + 1
+            view.addSubview(label)
         }
     }
     
@@ -108,12 +124,27 @@ class GameViewController: UIViewController {
         
     
     }
-    func updatePosition() {
+    
+    func pinGlassesToNose(){
+        let i = 30 //Point on Nose
+        guard let pointX = UserDefaults.standard.object(forKey: "\(i)x") as? NSNumber,
+            let pointY = UserDefaults.standard.object(forKey: "\(i)y") as? NSNumber,
+            let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber else {return}
+        
+        let x = pointX.doubleValue / 4
+        let y = (pointY.doubleValue + 45) / 4
+        let z = -Double(zPos)/6
+        self.ship.position = SCNVector3(x, y, z)
+//        self.ship.position = SCNVector3(100, 100, 100)
+
+    }
+    
+    func updateCentralPosition() {
         if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
             let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
             let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
             let _xPos = Float(xPos)/4
-            let _yPos = -Float(yPos)/4 + 20
+            let _yPos = (-Float(yPos) + 20)/4
             let _zPos = -Float(zPos)/6
 //            print(zPos)
             self.ship.position = SCNVector3(_xPos, _yPos, _zPos)
