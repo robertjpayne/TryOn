@@ -43,17 +43,15 @@
 //    facear =[[FaceARDetectIOS alloc] init];
 //    [self.videoCamera start];
 
-//    [self performSegueWithIdentifier:@"openSceneKitModally" sender:nil];
 
 }
 
-- (IBAction)startButtonPressed:(id)sender
-{
+- (void)viewDidAppear:(BOOL)animated {
     [self.videoCamera start];
-    
-    //CDD
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showFaceMarkers"];
+    [self performSegueWithIdentifier:@"openSceneKitModally" sender:nil];
 }
+
 - (IBAction)toggleFaceMarkers:(id)sender {
     bool currentValue = [[NSUserDefaults standardUserDefaults] boolForKey:@"showFaceMarkers"];
     [[NSUserDefaults standardUserDefaults] setBool:!currentValue forKey:@"showFaceMarkers"];
