@@ -13,7 +13,8 @@ import SceneKit
 
 //TODO:
 
-// Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
+//DONE:
+//  Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
 
 class GameViewController: UIViewController {
     

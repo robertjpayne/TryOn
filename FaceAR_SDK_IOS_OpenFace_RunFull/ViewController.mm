@@ -43,9 +43,10 @@
 //    facear =[[FaceARDetectIOS alloc] init];
 //    [self.videoCamera start];
 
-
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+}
 - (void)viewDidAppear:(BOOL)animated {
     [self.videoCamera start];
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showFaceMarkers"];
