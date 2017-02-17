@@ -27,7 +27,6 @@ class GameViewController: UIViewController {
     
     var animationInterval = 0.05
     var sliderValue:Double = 0
-    var fileName = ""
 
     enum Glasses {
         case purple
@@ -39,6 +38,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // create a new scene
+        var fileName = ""
         switch currentGlasses {
         case .purple:
             fileName = "Glasses"
@@ -103,7 +103,7 @@ class GameViewController: UIViewController {
     }
     
     func setupLittleGuy(){
-        
+        let fileName = "littleGlasses"
         let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
         
         // create and add a camera to the scene
