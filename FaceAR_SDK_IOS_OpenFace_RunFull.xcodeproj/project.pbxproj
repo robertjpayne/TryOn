@@ -39,6 +39,7 @@
 		955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE7351E53F448007D1A78 /* GameViewController.swift */; };
 		955BE7381E53F48A007D1A78 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 955BE7371E53F48A007D1A78 /* art.scnassets */; };
 		955BE73B1E53FA25007D1A78 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE73A1E53FA25007D1A78 /* Config.swift */; };
+		95FB003E1E58F2DB000D73BF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB003D1E58F2DB000D73BF /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		955BE7351E53F448007D1A78 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		955BE7371E53F48A007D1A78 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		955BE73A1E53FA25007D1A78 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		95FB003D1E58F2DB000D73BF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				955BE7391E53F494007D1A78 /* SceneKit Stuff */,
+				95FB003C1E58F281000D73BF /* Model */,
 				83B04F771D2B8BF4008A9370 /* AppDelegate.h */,
 				83B04F781D2B8BF4008A9370 /* AppDelegate.mm */,
 				83B04F7A1D2B8BF4008A9370 /* ViewController.h */,
@@ -303,6 +306,14 @@
 				955BE73A1E53FA25007D1A78 /* Config.swift */,
 			);
 			name = "SceneKit Stuff";
+			sourceTree = "<group>";
+		};
+		95FB003C1E58F281000D73BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95FB003D1E58F2DB000D73BF /* Product.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +469,7 @@
 				8304A0CC1D2BBD1100E2E96B /* LandmarkDetectorParameters.cpp in Sources */,
 				8304A0C91D2BBD1100E2E96B /* LandmarkDetectionValidator.cpp in Sources */,
 				8304A0CF1D2BBD1100E2E96B /* PAW.cpp in Sources */,
+				95FB003E1E58F2DB000D73BF /* Product.swift in Sources */,
 				8304A0CD1D2BBD1100E2E96B /* LandmarkDetectorUtils.cpp in Sources */,
 				83B04F761D2B8BF4008A9370 /* main.m in Sources */,
 			);
@@ -611,7 +623,7 @@
 				);
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceAR_SDK_IOS_OpenFace_RunFull/FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h";
@@ -637,7 +649,7 @@
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceAR_SDK_IOS_OpenFace_RunFull/FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h";

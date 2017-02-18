@@ -13,6 +13,8 @@ import SceneKit
 
 //TODO:
 
+//An infinite amount of UIPickers for the various xyz values.
+
 //DONE:
 //  Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
     //Steps: A) Set the box to Material > Transparency > Mode > RGB Zero
@@ -37,7 +39,7 @@ class GameViewController: UIViewController {
         case classyRims
         case topanga
     }
-    var currentGlasses:Glasses = .classyRims
+    var currentGlasses:Glasses = .topanga
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +112,10 @@ class GameViewController: UIViewController {
         sliderValueLabel.isHidden = !useSlider
 
         setupLittleGuy()
+        
+        let testProduct = Product(sceneTitle: "ClassyGlassesClearLenses", matrix: Matrix(positionAdjustment: Axes(x:0,y:0,z:0),
+                                                       rotationAdjustment: Axes(x:0,y:0,z:0),
+                                                       scale: Axes(x:0,y:0,z:0)))
     }
     
     func setupLittleGuy(){
@@ -181,20 +187,7 @@ class GameViewController: UIViewController {
 //        displayNumberLabels()
     }
     
-    func updateScale() {
-        var s:Double = 0
-        //Tweaks
-        switch currentGlasses {
-        case .purple:
-            s = 14
-        case .classyRims:
-            s = 6.6
-        case .topanga:
-            s = 14
-        }
-        
-        self.ship.scale = SCNVector3(s,s,s)
-    }
+
     
     func displayNumberLabels() {
         
@@ -212,6 +205,21 @@ class GameViewController: UIViewController {
             label.tag = i + 1
             view.addSubview(label)
         }
+    }
+    
+    func updateScale() {
+        var s:Double = 0
+        //Tweaks
+        switch currentGlasses {
+        case .purple:
+            s = 14
+        case .classyRims:
+            s = 6.6
+        case .topanga:
+            s = 14
+        }
+        
+        self.ship.scale = SCNVector3(s,s,s)
     }
     
     func updateEuler(){
