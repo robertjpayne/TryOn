@@ -611,7 +611,7 @@
 				);
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "KeeganRen.FaceAR-SDK-IOS-OpenFace-RunFull";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceAR_SDK_IOS_OpenFace_RunFull/FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h";
@@ -637,7 +637,7 @@
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "KeeganRen.FaceAR-SDK-IOS-OpenFace-RunFull";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceAR_SDK_IOS_OpenFace_RunFull/FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h";

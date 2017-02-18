@@ -15,6 +15,9 @@ import SceneKit
 
 //DONE:
 //  Add head model and use as a mask, good info here @20:48 https://www.youtube.com/watch?v=0iAvcGsbFec
+    //Steps: A) Set the box to Material > Transparency > Mode > RGB Zero
+    //       B) Make the rendering order of the box to be less than that of the object. (Identity > visibility)
+
 
 class GameViewController: UIViewController {
     
@@ -32,6 +35,7 @@ class GameViewController: UIViewController {
     enum Glasses {
         case purple
         case classyRims
+        case topanga
     }
     var currentGlasses:Glasses = .classyRims
     
@@ -43,8 +47,10 @@ class GameViewController: UIViewController {
         switch currentGlasses {
         case .purple:
             fileName = "Glasses"
-        default:
+        case .classyRims:
             fileName = "ClassyGlassesClearLenses"//"ClassyGlasses"
+        case .topanga:
+            fileName = "Topanga"
         }
         let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
         
@@ -71,7 +77,9 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        ship = scene.rootNode.childNode(withName: "glasses", recursively: true)!
+//        ship = scene.rootNode.childNode(withName: "instance_0", recursively: true)!
+        ship = scene.rootNode.childNodes.first ??  SCNNode()
+
         
         // animate the 3d object
 //        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
@@ -97,8 +105,9 @@ class GameViewController: UIViewController {
         
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
-        slider.isHidden = true
-        sliderValueLabel.isHidden = true
+        var useSlider = true
+        slider.isHidden = !useSlider
+        sliderValueLabel.isHidden = !useSlider
 
         setupLittleGuy()
     }
@@ -130,7 +139,7 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        littleNode = scene.rootNode.childNode(withName: "glasses", recursively: true)!
+        littleNode = scene.rootNode.childNodes.first ??  SCNNode()
         
         // animate the 3d object
                 littleNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 10)))
@@ -180,7 +189,10 @@ class GameViewController: UIViewController {
             s = 14
         case .classyRims:
             s = 6.6
+        case .topanga:
+            s = 14
         }
+        
         self.ship.scale = SCNVector3(s,s,s)
     }
     
@@ -213,7 +225,7 @@ class GameViewController: UIViewController {
             
             //Tweaks
             switch currentGlasses {
-            case .purple:
+            case .purple, .topanga:
                 _yaw = _yaw - 0.2
             case .classyRims:
                 _pitch += 300
@@ -244,8 +256,9 @@ class GameViewController: UIViewController {
         
         //Tweaks
         switch currentGlasses {
-        case .purple:
+        case .purple, .topanga:
             _y -= 50
+            _z += 92
         case .classyRims:
             _y += 38
             _z += 200
