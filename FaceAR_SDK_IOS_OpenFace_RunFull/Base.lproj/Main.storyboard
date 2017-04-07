@@ -180,6 +180,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgh-TN-ZKn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
+                                                </sceneKitView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeQ-Vd-mLR">
                                                     <rect key="frame" x="0.0" y="490" width="375" height="185"/>
                                                     <subviews>
@@ -210,13 +213,18 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Bgh-TN-ZKn" secondAttribute="trailing" id="8kk-2z-nB6"/>
                                             <constraint firstAttribute="trailing" secondItem="aeQ-Vd-mLR" secondAttribute="trailing" id="CXL-UO-ZWM"/>
+                                            <constraint firstItem="Bgh-TN-ZKn" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="DxA-ID-zFx"/>
+                                            <constraint firstItem="aeQ-Vd-mLR" firstAttribute="top" secondItem="Bgh-TN-ZKn" secondAttribute="bottom" id="XZl-74-Pra"/>
+                                            <constraint firstItem="Bgh-TN-ZKn" firstAttribute="top" secondItem="3bb-fD-qFE" secondAttribute="top" id="ZE6-gi-tfi"/>
                                             <constraint firstItem="aeQ-Vd-mLR" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="fyh-a1-Vrj"/>
                                             <constraint firstAttribute="bottom" secondItem="aeQ-Vd-mLR" secondAttribute="bottom" constant="-8" id="xrV-FA-67w"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="667"/>
                                         <connections>
                                             <outlet property="detailContainer" destination="aeQ-Vd-mLR" id="ihC-xe-GTI"/>
+                                            <outlet property="scnView" destination="Bgh-TN-ZKn" id="jDp-Iy-2zg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
