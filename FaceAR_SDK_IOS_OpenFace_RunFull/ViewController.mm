@@ -50,7 +50,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [self.videoCamera start];
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showFaceMarkers"];
-    [self performSegueWithIdentifier:@"openSceneKitModally" sender:nil];
+//    [self performSegueWithIdentifier:@"openSceneKitModally" sender:nil];
+    [self performSegueWithIdentifier:@"presentCollectionViewController" sender:nil];
 }
 
 - (IBAction)toggleFaceMarkers:(id)sender {

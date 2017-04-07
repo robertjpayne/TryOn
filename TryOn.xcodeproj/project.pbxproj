@@ -36,6 +36,8 @@
 		83B04FAF1D2B8D73008A9370 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FAE1D2B8D73008A9370 /* CoreMedia.framework */; };
 		83B04FB11D2B8D7C008A9370 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FB01D2B8D7C008A9370 /* AVFoundation.framework */; };
 		83B04FB31D2B8DAD008A9370 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FB21D2B8DAD008A9370 /* opencv2.framework */; };
+		9504999C1E9844A900FFCB7A /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */; };
+		9504999E1E984AE100FFCB7A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */; };
 		955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE7351E53F448007D1A78 /* GameViewController.swift */; };
 		955BE7381E53F48A007D1A78 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 955BE7371E53F48A007D1A78 /* art.scnassets */; };
 		955BE73B1E53FA25007D1A78 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE73A1E53FA25007D1A78 /* Config.swift */; };
@@ -89,7 +91,7 @@
 		8304A1961D2BF7C000E2E96B /* classifiers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = classifiers; path = FaceAR_SDK_IOS_OpenFace_RunFull/model/classifiers; sourceTree = "<group>"; };
 		833EB6C61D2E0B3A0068AB39 /* GazeEstimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GazeEstimation.cpp; sourceTree = "<group>"; };
 		833EB6C71D2E0B3A0068AB39 /* GazeEstimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GazeEstimation.h; sourceTree = "<group>"; };
-		83B04F711D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceAR_SDK_IOS_OpenFace_RunFull.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B04F711D2B8BF4008A9370 /* TryOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B04F751D2B8BF4008A9370 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83B04F771D2B8BF4008A9370 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83B04F781D2B8BF4008A9370 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -100,10 +102,10 @@
 		83B04F831D2B8BF4008A9370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83B04F861D2B8BF4008A9370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B04F881D2B8BF4008A9370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83B04F8D1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceAR_SDK_IOS_OpenFace_RunFullTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B04F8D1D2B8BF4008A9370 /* TryOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B04F911D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceAR_SDK_IOS_OpenFace_RunFullTests.m; sourceTree = "<group>"; };
 		83B04F931D2B8BF4008A9370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83B04F981D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceAR_SDK_IOS_OpenFace_RunFullUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B04F981D2B8BF4008A9370 /* TryOnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryOnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B04F9C1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceAR_SDK_IOS_OpenFace_RunFullUITests.m; sourceTree = "<group>"; };
 		83B04F9E1D2B8BF4008A9370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83B04FAA1D2B8D5A008A9370 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -111,6 +113,8 @@
 		83B04FAE1D2B8D73008A9370 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		83B04FB01D2B8D7C008A9370 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		83B04FB21D2B8DAD008A9370 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = FaceAR_SDK_IOS_OpenFace_RunFull/opencv2.framework; sourceTree = "<group>"; };
+		9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
+		9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		955BE7341E53F447007D1A78 /* FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h"; sourceTree = "<group>"; };
 		955BE7351E53F448007D1A78 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		955BE7371E53F48A007D1A78 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -226,15 +230,8 @@
 		83B04F681D2B8BF4008A9370 = {
 			isa = PBXGroup;
 			children = (
-				8304A1961D2BF7C000E2E96B /* classifiers */,
-				8304A1941D2BF7B200E2E96B /* model */,
-				8304A0AD1D2BBD1100E2E96B /* local */,
-				8304A0A91D2BBD0600E2E96B /* FaceARDetect */,
-				83B04FB21D2B8DAD008A9370 /* opencv2.framework */,
-				83B04FB01D2B8D7C008A9370 /* AVFoundation.framework */,
-				83B04FAE1D2B8D73008A9370 /* CoreMedia.framework */,
-				83B04FAC1D2B8D65008A9370 /* AssetsLibrary.framework */,
-				83B04FAA1D2B8D5A008A9370 /* CoreData.framework */,
+				950499991E9841E000FFCB7A /* FaceDetection */,
+				9504999A1E9841F100FFCB7A /* Frameworks */,
 				83B04F731D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */,
 				83B04F901D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests */,
 				83B04F9B1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests */,
@@ -245,9 +242,9 @@
 		83B04F721D2B8BF4008A9370 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83B04F711D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.app */,
-				83B04F8D1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests.xctest */,
-				83B04F981D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests.xctest */,
+				83B04F711D2B8BF4008A9370 /* TryOn.app */,
+				83B04F8D1D2B8BF4008A9370 /* TryOnTests.xctest */,
+				83B04F981D2B8BF4008A9370 /* TryOnUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,10 +295,35 @@
 			path = FaceAR_SDK_IOS_OpenFace_RunFullUITests;
 			sourceTree = "<group>";
 		};
+		950499991E9841E000FFCB7A /* FaceDetection */ = {
+			isa = PBXGroup;
+			children = (
+				8304A1961D2BF7C000E2E96B /* classifiers */,
+				8304A1941D2BF7B200E2E96B /* model */,
+				8304A0AD1D2BBD1100E2E96B /* local */,
+				8304A0A91D2BBD0600E2E96B /* FaceARDetect */,
+			);
+			name = FaceDetection;
+			sourceTree = "<group>";
+		};
+		9504999A1E9841F100FFCB7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83B04FB21D2B8DAD008A9370 /* opencv2.framework */,
+				83B04FB01D2B8D7C008A9370 /* AVFoundation.framework */,
+				83B04FAE1D2B8D73008A9370 /* CoreMedia.framework */,
+				83B04FAC1D2B8D65008A9370 /* AssetsLibrary.framework */,
+				83B04FAA1D2B8D5A008A9370 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		955BE7391E53F494007D1A78 /* SceneKit Stuff */ = {
 			isa = PBXGroup;
 			children = (
 				955BE7351E53F448007D1A78 /* GameViewController.swift */,
+				9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */,
+				9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */,
 				955BE7371E53F48A007D1A78 /* art.scnassets */,
 				955BE73A1E53FA25007D1A78 /* Config.swift */,
 			);
@@ -319,9 +341,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		83B04F701D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */ = {
+		83B04F701D2B8BF4008A9370 /* TryOn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83B04FA11D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFull" */;
+			buildConfigurationList = 83B04FA11D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "TryOn" */;
 			buildPhases = (
 				83B04F6D1D2B8BF4008A9370 /* Sources */,
 				83B04F6E1D2B8BF4008A9370 /* Frameworks */,
@@ -331,14 +353,14 @@
 			);
 			dependencies = (
 			);
-			name = FaceAR_SDK_IOS_OpenFace_RunFull;
+			name = TryOn;
 			productName = FaceAR_SDK_IOS_OpenFace_RunFull;
-			productReference = 83B04F711D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.app */;
+			productReference = 83B04F711D2B8BF4008A9370 /* TryOn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83B04F8C1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests */ = {
+		83B04F8C1D2B8BF4008A9370 /* TryOnTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83B04FA41D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFullTests" */;
+			buildConfigurationList = 83B04FA41D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "TryOnTests" */;
 			buildPhases = (
 				83B04F891D2B8BF4008A9370 /* Sources */,
 				83B04F8A1D2B8BF4008A9370 /* Frameworks */,
@@ -349,14 +371,14 @@
 			dependencies = (
 				83B04F8F1D2B8BF4008A9370 /* PBXTargetDependency */,
 			);
-			name = FaceAR_SDK_IOS_OpenFace_RunFullTests;
+			name = TryOnTests;
 			productName = FaceAR_SDK_IOS_OpenFace_RunFullTests;
-			productReference = 83B04F8D1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests.xctest */;
+			productReference = 83B04F8D1D2B8BF4008A9370 /* TryOnTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		83B04F971D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests */ = {
+		83B04F971D2B8BF4008A9370 /* TryOnUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83B04FA71D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFullUITests" */;
+			buildConfigurationList = 83B04FA71D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "TryOnUITests" */;
 			buildPhases = (
 				83B04F941D2B8BF4008A9370 /* Sources */,
 				83B04F951D2B8BF4008A9370 /* Frameworks */,
@@ -367,9 +389,9 @@
 			dependencies = (
 				83B04F9A1D2B8BF4008A9370 /* PBXTargetDependency */,
 			);
-			name = FaceAR_SDK_IOS_OpenFace_RunFullUITests;
+			name = TryOnUITests;
 			productName = FaceAR_SDK_IOS_OpenFace_RunFullUITests;
-			productReference = 83B04F981D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests.xctest */;
+			productReference = 83B04F981D2B8BF4008A9370 /* TryOnUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -379,7 +401,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Keegan Ren";
+				ORGANIZATIONNAME = "Chris Dunaetz";
 				TargetAttributes = {
 					83B04F701D2B8BF4008A9370 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -397,7 +419,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83B04F6C1D2B8BF4008A9370 /* Build configuration list for PBXProject "FaceAR_SDK_IOS_OpenFace_RunFull" */;
+			buildConfigurationList = 83B04F6C1D2B8BF4008A9370 /* Build configuration list for PBXProject "TryOn" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -410,9 +432,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83B04F701D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */,
-				83B04F8C1D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullTests */,
-				83B04F971D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFullUITests */,
+				83B04F701D2B8BF4008A9370 /* TryOn */,
+				83B04F8C1D2B8BF4008A9370 /* TryOnTests */,
+				83B04F971D2B8BF4008A9370 /* TryOnUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -454,6 +476,7 @@
 			files = (
 				8304A0AC1D2BBD0600E2E96B /* FaceARDetectIOS.mm in Sources */,
 				8304A0CA1D2BBD1100E2E96B /* LandmarkDetectorFunc.cpp in Sources */,
+				9504999E1E984AE100FFCB7A /* ProductCollectionViewCell.swift in Sources */,
 				83B04F821D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodeld in Sources */,
 				8304A0C81D2BBD1100E2E96B /* CCNF_patch_expert.cpp in Sources */,
 				955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */,
@@ -470,6 +493,7 @@
 				8304A0C91D2BBD1100E2E96B /* LandmarkDetectionValidator.cpp in Sources */,
 				8304A0CF1D2BBD1100E2E96B /* PAW.cpp in Sources */,
 				95FB003E1E58F2DB000D73BF /* Product.swift in Sources */,
+				9504999C1E9844A900FFCB7A /* ProductCollectionViewController.swift in Sources */,
 				8304A0CD1D2BBD1100E2E96B /* LandmarkDetectorUtils.cpp in Sources */,
 				83B04F761D2B8BF4008A9370 /* main.m in Sources */,
 			);
@@ -496,12 +520,12 @@
 /* Begin PBXTargetDependency section */
 		83B04F8F1D2B8BF4008A9370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 83B04F701D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */;
+			target = 83B04F701D2B8BF4008A9370 /* TryOn */;
 			targetProxy = 83B04F8E1D2B8BF4008A9370 /* PBXContainerItemProxy */;
 		};
 		83B04F9A1D2B8BF4008A9370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 83B04F701D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */;
+			target = 83B04F701D2B8BF4008A9370 /* TryOn */;
 			targetProxy = 83B04F991D2B8BF4008A9370 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -623,7 +647,7 @@
 				);
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceAR_SDK_IOS_OpenFace_RunFull/FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h";
@@ -649,7 +673,7 @@
 				INFOPLIST_FILE = FaceAR_SDK_IOS_OpenFace_RunFull/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dunaetz.TryOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceAR_SDK_IOS_OpenFace_RunFull/FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h";
@@ -667,7 +691,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zjut.FaceAR-SDK-IOS-OpenFace-RunFullTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceAR_SDK_IOS_OpenFace_RunFull.app/FaceAR_SDK_IOS_OpenFace_RunFull";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TryOn.app/TryOn";
 			};
 			name = Debug;
 		};
@@ -680,7 +704,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zjut.FaceAR-SDK-IOS-OpenFace-RunFullTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceAR_SDK_IOS_OpenFace_RunFull.app/FaceAR_SDK_IOS_OpenFace_RunFull";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TryOn.app/TryOn";
 			};
 			name = Release;
 		};
@@ -711,7 +735,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83B04F6C1D2B8BF4008A9370 /* Build configuration list for PBXProject "FaceAR_SDK_IOS_OpenFace_RunFull" */ = {
+		83B04F6C1D2B8BF4008A9370 /* Build configuration list for PBXProject "TryOn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83B04F9F1D2B8BF4008A9370 /* Debug */,
@@ -720,7 +744,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83B04FA11D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFull" */ = {
+		83B04FA11D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "TryOn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83B04FA21D2B8BF4008A9370 /* Debug */,
@@ -729,7 +753,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83B04FA41D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFullTests" */ = {
+		83B04FA41D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "TryOnTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83B04FA51D2B8BF4008A9370 /* Debug */,
@@ -738,7 +762,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83B04FA71D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "FaceAR_SDK_IOS_OpenFace_RunFullUITests" */ = {
+		83B04FA71D2B8BF4008A9370 /* Build configuration list for PBXNativeTarget "TryOnUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83B04FA81D2B8BF4008A9370 /* Debug */,
