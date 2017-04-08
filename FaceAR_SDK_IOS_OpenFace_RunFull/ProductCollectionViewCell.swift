@@ -39,19 +39,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         setupDetail()
         self.setupMainScene()
-        
-        delay(2) { 
-            self.createTimer()
-        }
 
     }
     
     func createTimer(){
-        animationTimer = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
     }
     
     func removeTimer(){
-        animationTimer = nil
     }
     
     //MARK: Setup
@@ -68,13 +62,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
             fileName = "Topanga"
         }
         let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
-        
-        // retrieve the product node
-        productNode = scene.rootNode.childNodes.first!
-        
-        // set the scene
-        scnView.scene = scene
-        scnView.backgroundColor = UIColor.clear
         
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -98,7 +85,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
         ambientLightNode.light!.color = UIColor.darkGray
         scene.rootNode.addChildNode(ambientLightNode)
         
-//        scnView.allowsCameraControl = true
+        // retrieve the productNode node
+        productNode = scene.rootNode.childNodes.first ??  SCNNode()
+
+        // set the scene to the view
+        scnView.scene = scene
+        scnView.backgroundColor = UIColor.clear
+
+        let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
     }
     
     
