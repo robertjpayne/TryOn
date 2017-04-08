@@ -48,13 +48,6 @@ class ProductSceneViewController: UIViewController {
         }
         let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
         
-        // retrieve the product node
-        productNode = scene.rootNode.childNodes.first!
-        
-        // set the scene
-        scnView.scene = scene
-        scnView.backgroundColor = UIColor.clear
-        
         // create and add a camera to the scene
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
@@ -77,9 +70,34 @@ class ProductSceneViewController: UIViewController {
         ambientLightNode.light!.color = UIColor.darkGray
         scene.rootNode.addChildNode(ambientLightNode)
         
+        // retrieve the productNode node
+        //        productNode = scene.rootNode.childNode(withName: "instance_0", recursively: true)!
+        productNode = scene.rootNode.childNodes.first ??  SCNNode()
+        
+        
+        // animate the 3d object
+        //        productNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        
+        //        productNode.runAction(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1))
+        
+        // set the scene to the view
+        scnView.scene = scene
+        
+        // allows the user to manipulate the camera
         //        scnView.allowsCameraControl = true
         
-        Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
+        // show statistics such as fps and timing information
+        //        scnView.showsStatistics = true
+        
+        // configure the view
+        scnView.backgroundColor = UIColor.clear
+        
+        // add a tap gesture recognizer
+        //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        //        scnView.addGestureRecognizer(tapGesture)
+        
+        
+        let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
 
     }
     
