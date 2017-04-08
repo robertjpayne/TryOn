@@ -14,13 +14,23 @@ class ProductCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var products = [0,0,0,0]
+//    var products = [0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       pageControl.numberOfPages = 4
+       pageControl.numberOfPages = products.count
+        
+//        self.collectionView.setContentOffset(CGPoint(x:1100, y:0), animated: false)
+//
+//        delay(3) { 
+//            
+////            self.collectionView.scrollToItem(at: IndexPath(row:2, section:0), at: .centeredVertically, animated: false)
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
@@ -30,13 +40,27 @@ class ProductCollectionViewController: UIViewController {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
+        cell.createTimer()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
+        cell.removeTimer()
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
         return view.frame.size
     }
-    
+    var pageX = 0 {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     func scrollViewDidScroll(_ scrollView: UICollectionView) {
         let middlePoint = CGPoint(x: scrollView.frame.width/2 + scrollView.contentOffset.x, y: scrollView.frame.height/2 + scrollView.contentOffset.y)
         if let centerRowIndex = scrollView.indexPathForItem(at: middlePoint) {
@@ -44,6 +68,7 @@ class ProductCollectionViewController: UIViewController {
                 if index.row == centerRowIndex.row {
                     UIView.animate(withDuration: 0.4, animations: {
                         self.pageControl.currentPage = index.row
+//                        self.pageX = index.row
                     })
                 }
             }

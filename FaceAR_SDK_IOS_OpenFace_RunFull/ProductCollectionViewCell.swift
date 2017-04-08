@@ -12,6 +12,7 @@ import SceneKit
 class ProductCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var scnView: SCNView!
+    @IBOutlet weak var detailScnView: SCNView!
     @IBOutlet weak var detailContainer: UIView!
     @IBOutlet weak var starsStackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -19,7 +20,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var buyButton: UIButton!
     
     var productNode = SCNNode()
+    var detailNode = SCNNode()
+
     var animationInterval = 0.05
+    var animationTimer: Timer?
     enum Glasses {
         case purple
         case classyRims
@@ -34,11 +38,20 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func loadData() {
         
         setupDetail()
-        setupMainScene()
+        self.setupMainScene()
         
-        let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
-        
+        delay(2) { 
+            self.createTimer()
+        }
 
+    }
+    
+    func createTimer(){
+        animationTimer = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
+    }
+    
+    func removeTimer(){
+        animationTimer = nil
     }
     
     //MARK: Setup
@@ -84,6 +97,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
         ambientLightNode.light!.type = .ambient
         ambientLightNode.light!.color = UIColor.darkGray
         scene.rootNode.addChildNode(ambientLightNode)
+        
+//        scnView.allowsCameraControl = true
     }
     
     
@@ -95,11 +110,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func setupDetail(){
         detailContainer.layer.cornerRadius = 10
         detailContainer.layer.masksToBounds = true
-        setupStars()
+        
         buyButton.layer.borderColor = UIColor.white.cgColor
         buyButton.layer.borderWidth = 1.5
         buyButton.layer.cornerRadius = 3
         buyButton.layer.masksToBounds = true
+        
+        setupStars()
+        setupDetailScene()
     }
     
     func setupStars(){
@@ -118,6 +136,36 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     }
 
+    func setupDetailScene(){
+        let fileName = "littleGlasses"
+        let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
+        
+        // create and add a camera to the scene
+        let cameraNode = SCNNode()
+        cameraNode.camera = SCNCamera()
+        scene.rootNode.addChildNode(cameraNode)
+        
+        // place the camera
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+
+        // retrieve the ship node
+        detailNode = scene.rootNode.childNodes.first ??  SCNNode()
+        
+        // animate the 3d object
+        detailNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 10)))
+        
+        // set the scene to the view
+        detailScnView.scene = scene
+        
+        // configure the view
+        detailScnView.backgroundColor = UIColor.clear
+        
+        
+        let s = 2
+        self.detailNode.scale = SCNVector3(s,s,s)
+        detailNode.pivot = SCNMatrix4MakeRotation(Float(M_PI_2), 1, 0, 0)
+        
+    }
     
     
     
@@ -205,6 +253,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         _y /= -8
         _z /= -8
         //        print("pinning to nose: x:\(_x) y:\(_y) z:\(_z)")
+//        _x = 200
+//        _y = 0
+        
         productNode.position = SCNVector3(_x, _y, _z)
         
     }
