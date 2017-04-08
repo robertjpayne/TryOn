@@ -13,6 +13,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var scnView: SCNView!
     @IBOutlet weak var detailContainer: UIView!
+    @IBOutlet weak var starsStackView: UIStackView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    @IBOutlet weak var buyButton: UIButton!
     
     var productNode = SCNNode()
     var animationInterval = 0.05
@@ -82,11 +86,41 @@ class ProductCollectionViewCell: UICollectionViewCell {
         scene.rootNode.addChildNode(ambientLightNode)
     }
     
+    
+    
+    
+    //MARK: Detail
+    //(box at bottom of the screen providing additional info about product)
+    
     func setupDetail(){
         detailContainer.layer.cornerRadius = 10
         detailContainer.layer.masksToBounds = true
+        setupStars()
+        buyButton.layer.borderColor = UIColor.white.cgColor
+        buyButton.layer.borderWidth = 1.5
+        buyButton.layer.cornerRadius = 3
+        buyButton.layer.masksToBounds = true
+    }
+    
+    func setupStars(){
+//        let numberOfStars = 4
+//        //Clears old value
+//        for view in starsStackView.arrangedSubviews {
+//            view.removeFromSuperview()
+//        }
+//        //Updates new value
+//        for _ in 0...numberOfStars+1 {
+//            let imageView = UIImageView(image: #imageLiteral(resourceName: "star-reviews"))
+//            imageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
+//            imageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
+//            starsStackView.addArrangedSubview(imageView)
+//        }
+
     }
 
+    
+    
+    
     //MARK: Animation
     
     func animateOnInterval(){
