@@ -33,11 +33,19 @@ class Matrix {
 }
 
 class Product {
-    var scene:SCNScene!
-    var matrix:Matrix!
+    var title:String!
+    fileprivate var sceneTitle = ""
+    var scene:SCNScene? {
+        return SCNScene(named: "art.scnassets/\(sceneTitle).scn")
+    }
+    var detailScene:SCNScene? {
+        return SCNScene(named: "art.scnassets/detail\(sceneTitle).scn")
+    }
+    var matrix:Matrix?
     
-    required init(sceneTitle:String, matrix:Matrix) {
-        self.scene = SCNScene(named: "art.scnassets/\(sceneTitle).scn")!
+    required init(sceneTitle:String, matrix:Matrix?) {
+        self.sceneTitle = sceneTitle
+        self.title = sceneTitle
         self.matrix = matrix
     }
 }

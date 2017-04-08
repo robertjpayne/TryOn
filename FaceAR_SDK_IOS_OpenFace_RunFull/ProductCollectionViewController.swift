@@ -14,19 +14,11 @@ class ProductCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var products = [0,0,0,0]
-//    var products = [0]
+    var products = localProducts
     
     override func viewDidLoad() {
         super.viewDidLoad()
        pageControl.numberOfPages = products.count
-        
-//        self.collectionView.setContentOffset(CGPoint(x:1100, y:0), animated: false)
-//
-//        delay(3) { 
-//            
-////            self.collectionView.scrollToItem(at: IndexPath(row:2, section:0), at: .centeredVertically, animated: false)
-//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,18 +28,18 @@ class ProductCollectionViewController: UIViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
-        cell.loadData()
+        
+        cell.loadProduct(products[indexPath.row])
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
-        cell.createTimer()
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
-        cell.removeTimer()
     }
     
     func collectionView(_ collectionView: UICollectionView,

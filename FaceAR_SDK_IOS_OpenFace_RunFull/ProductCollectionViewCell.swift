@@ -24,44 +24,26 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     var animationInterval = 0.05
     var animationTimer: Timer?
-    enum Glasses {
-        case purple
-        case classyRims
-        case topanga
-    }
-    var currentGlasses:Glasses = .classyRims
+    var product: Product!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func loadData() {
+    func loadProduct(_ product:Product) {
         
+        self.product = product
         setupDetail()
         self.setupMainScene()
 
-    }
-    
-    func createTimer(){
-    }
-    
-    func removeTimer(){
     }
     
     //MARK: Setup
     
     func setupMainScene(){
         // create a new scene
-        var fileName = ""
-        switch currentGlasses {
-        case .purple:
-            fileName = "Glasses"
-        case .classyRims:
-            fileName = "ClassyGlassesClearLenses"//"ClassyGlasses"
-        case .topanga:
-            fileName = "Topanga"
-        }
-        let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
+        
+        guard let scene = product.scene else {return}
         
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -86,7 +68,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the productNode node
-        productNode = scene.rootNode.childNodes.first ??  SCNNode()
+        if let first = scene.rootNode.childNodes.first {
+            productNode = first
+        }
 
         // set the scene to the view
         scnView.scene = scene
@@ -102,6 +86,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     //(box at bottom of the screen providing additional info about product)
     
     func setupDetail(){
+        
         detailContainer.layer.cornerRadius = 10
         detailContainer.layer.masksToBounds = true
         
@@ -109,6 +94,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         buyButton.layer.borderWidth = 1.5
         buyButton.layer.cornerRadius = 3
         buyButton.layer.masksToBounds = true
+        
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.text = product.title
         
         setupStars()
         setupDetailScene()
@@ -131,8 +119,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     func setupDetailScene(){
-        let fileName = "littleGlasses"
-        let scene = SCNScene(named: "art.scnassets/\(fileName).scn")!
+        guard let scene = product.detailScene else {return}
         
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -143,7 +130,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
 
         // retrieve the ship node
-        detailNode = scene.rootNode.childNodes.first ??  SCNNode()
+        if let first = scene.rootNode.childNodes.first {
+            detailNode = first
+        }
         
         // animate the 3d object
         detailNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 10)))
@@ -180,15 +169,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func updateScale() {
         var s:Double = 0
         //Tweaks
-        switch currentGlasses {
-        case .purple:
-            s = 14
-        case .classyRims:
-            s = 6.6
-        case .topanga:
-            s = 14
-        }
-        
+//        switch currentGlasses {
+//        case .purple:
+//            s = 14
+//        case .classyRims:
+//            s = 6.6
+//        case .topanga:
+//            s = 14
+//        }
+        s = 14
+
         productNode.scale = SCNVector3(s,s,s)
     }
     
@@ -201,14 +191,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
             var _roll = -Float(roll)
             //            print(pitch)
             
-            //Tweaks
-            switch currentGlasses {
-            case .purple, .topanga:
-                _yaw = _yaw - 0.2
-            case .classyRims:
-                _pitch += 300
-            }
-            
+//            //Tweaks
+//            switch currentGlasses {
+//            case .purple, .topanga:
+//                _yaw = _yaw - 0.2
+//            case .classyRims:
+//                _pitch += 300
+//            }
+            _pitch += 300
+
             productNode.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
         }
         
@@ -233,14 +224,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
         //        print("x:\(_x) y:\(_y) z:\(_z)")
         
         //Tweaks
-        switch currentGlasses {
-        case .purple, .topanga:
-            _y -= 50
-            _z += 92
-        case .classyRims:
-            _y += 38
-            _z += 200
-        }
+//        switch currentGlasses {
+//        case .purple, .topanga:
+//            _y -= 50
+//            _z += 92
+//        case .classyRims:
+//            _y += 38
+//            _z += 200
+//        }
+        _y += 38
+        _z += 200
         
         //Fudge and flips:
         _x /= 8
