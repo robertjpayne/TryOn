@@ -13,6 +13,7 @@ class ProductCollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    var productSceneViewController: ProductSceneViewController!
     
     var products = [0,0,0,0]
 //    var products = [0]
@@ -21,13 +22,10 @@ class ProductCollectionViewController: UIViewController {
         super.viewDidLoad()
        pageControl.numberOfPages = products.count
         
-//        self.collectionView.setContentOffset(CGPoint(x:1100, y:0), animated: false)
-//
-//        delay(3) { 
-//            
-////            self.collectionView.scrollToItem(at: IndexPath(row:2, section:0), at: .centeredVertically, animated: false)
-//        }
+
     }
+    
+    //MARK: CollectionView Delegate Functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
@@ -42,25 +40,19 @@ class ProductCollectionViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
-        cell.createTimer()
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCollectionViewCell
-        cell.removeTimer()
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
-        return view.frame.size
+        return CGSize(width:self.view.bounds.width, height: 185)
     }
-    var pageX = 0 {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+
     func scrollViewDidScroll(_ scrollView: UICollectionView) {
         let middlePoint = CGPoint(x: scrollView.frame.width/2 + scrollView.contentOffset.x, y: scrollView.frame.height/2 + scrollView.contentOffset.y)
         if let centerRowIndex = scrollView.indexPathForItem(at: middlePoint) {
@@ -68,11 +60,15 @@ class ProductCollectionViewController: UIViewController {
                 if index.row == centerRowIndex.row {
                     UIView.animate(withDuration: 0.4, animations: {
                         self.pageControl.currentPage = index.row
-//                        self.pageX = index.row
                     })
                 }
             }
         }
     }
 
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       productSceneViewController = segue.destination as! ProductSceneViewController
+    }
 }
