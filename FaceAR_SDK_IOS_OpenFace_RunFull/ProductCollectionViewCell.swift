@@ -177,9 +177,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
 //        case .topanga:
 //            s = 14
 //        }
-//        s = 6.6
-//
-//        productNode.scale = SCNVector3(s,s,s)
+        s = 14
+
+        productNode.scale = SCNVector3(s,s,s)
     }
     
     func updateEuler(){
@@ -233,6 +233,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 //            _z += 200
 //        }
         _y += 38
+        _z += 200
         
         //Fudge and flips:
         _x /= 8
@@ -242,15 +243,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 //        _x = 200
 //        _y = 0
         
-        _z += -20
-
         productNode.position = SCNVector3(_x, _y, _z)
-        let factor = 50 / -_z
-        print(factor)
-        var s = 330 / -_z //factor * 6.6
-        let constant = 0.5
-        s += constant
-        productNode.scale = SCNVector3(s,s,s)
         
     }
     
