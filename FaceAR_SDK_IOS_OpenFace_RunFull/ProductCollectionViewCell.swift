@@ -177,7 +177,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 //        case .topanga:
 //            s = 14
 //        }
-        s = 14
+        s = 6.6
 
         productNode.scale = SCNVector3(s,s,s)
     }
@@ -246,17 +246,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productNode.position = SCNVector3(_x, _y, _z)
         
     }
-    
-    func updateCentralPosition() {
-        if let xPos = UserDefaults.standard.object(forKey: "xPos") as? NSNumber,
-            let yPos = UserDefaults.standard.object(forKey: "yPos") as? NSNumber,
-            let zPos = UserDefaults.standard.object(forKey: "zPos") as? NSNumber {
-            let _x = Float(xPos)/4
-            let _y = (-Float(yPos) + 75)/4
-            let _z = -Float(zPos)/6
-            
-//            print("central Postion: x:\(_x) y:\(_y) z:\(_z)")
-            productNode.position = SCNVector3(_x, _y, _z)
-        }
-    }
+
 }

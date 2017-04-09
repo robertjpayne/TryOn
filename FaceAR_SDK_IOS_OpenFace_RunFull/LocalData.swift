@@ -8,6 +8,6 @@
 
 import Foundation
 
-var localProducts = [Product(sceneTitle: "Glasses", matrix: nil),
-                     Product(sceneTitle: "ClassyGlassesClearLenses", matrix: nil),
+var localProducts = [Product(sceneTitle: "ClassyGlassesClearLenses", matrix: nil),
+                     Product(sceneTitle: "Glasses", matrix: nil),
                      Product(sceneTitle: "Topanga", matrix: nil)]
