@@ -270,6 +270,8 @@
 				83B04F831D2B8BF4008A9370 /* Assets.xcassets */,
 				83B04F851D2B8BF4008A9370 /* LaunchScreen.storyboard */,
 				83B04F881D2B8BF4008A9370 /* Info.plist */,
+				950499AA1E99E39E00FFCB7A /* TODO */,
+				950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */,
 				83B04F801D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodeld */,
 				83B04F741D2B8BF4008A9370 /* Supporting Files */,
 				955BE7341E53F447007D1A78 /* FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h */,
@@ -336,8 +338,6 @@
 				955BE73A1E53FA25007D1A78 /* Config.swift */,
 				9504999F1E98B13E00FFCB7A /* Utilities+Extensions.swift */,
 				950499A31E99803B00FFCB7A /* LocalData.swift */,
-				950499AA1E99E39E00FFCB7A /* TODO */,
-				950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */,
 			);
 			name = "SceneKit Stuff";
 			sourceTree = "<group>";

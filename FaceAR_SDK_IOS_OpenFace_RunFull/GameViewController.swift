@@ -115,7 +115,7 @@ class GameViewController: UIViewController {
         
         let testProduct = Product(sceneTitle: "ClassyGlassesClearLenses", matrix: Matrix(positionAdjustment: Axes(x:0,y:0,z:0),
                                                        rotationAdjustment: Axes(x:0,y:0,z:0),
-                                                       scale: Axes(x:0,y:0,z:0)))
+                                                       scale: Axes(x:0,y:0,z:0)), diplayTitle: "", price: 99.00)
     }
     
     func setupLittleGuy(){

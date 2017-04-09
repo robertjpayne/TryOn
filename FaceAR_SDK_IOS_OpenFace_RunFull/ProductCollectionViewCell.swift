@@ -90,11 +90,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
         detailContainer.layer.cornerRadius = 10
         detailContainer.layer.masksToBounds = true
         
+        //Buy Button
         buyButton.layer.borderColor = UIColor.white.cgColor
         buyButton.layer.borderWidth = 1.5
         buyButton.layer.cornerRadius = 3
         buyButton.layer.masksToBounds = true
+        let string = "  $"+String(product.price)+"  "
+        buyButton.setTitle(string, for: .normal)
         
+        //Title
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.text = product.title
         
@@ -127,7 +131,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: -5, y: 0, z: 20)
 
         // retrieve the ship node
         if let first = scene.rootNode.childNodes.first {
@@ -146,7 +150,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         let s = 2
         self.detailNode.scale = SCNVector3(s,s,s)
-        detailNode.pivot = SCNMatrix4MakeRotation(Float(M_PI_2), 1, 0, 0)
+//        detailNode.pivot = SCNMatrix4MakeRotation(Float(M_PI_2), 1, 0, 0)
+        
+        detailNode.pivot = SCNMatrix4MakeRotation(.pi/2, 1, 0, 0)
+
         
     }
     
