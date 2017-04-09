@@ -31,9 +31,11 @@
                                     <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T9Z-9F-myr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-Qh-6Jf">
-                                <rect key="frame" x="0.0" y="-1" width="375" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bmN-Qh-6Jf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bmN-Qh-6Jf" secondAttribute="height" multiplier="3:4" id="o7V-MH-iq5"/>
+                                </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-nQ-ONF">
                                 <rect key="frame" x="268" y="598" width="46" height="30"/>
@@ -53,12 +55,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.42232649597763561" green="0.74640564252683717" blue="0.87097477791878175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bmN-Qh-6Jf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EGb-1z-jU1"/>
+                            <constraint firstItem="bmN-Qh-6Jf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UBb-lE-ZO9"/>
+                            <constraint firstAttribute="trailing" secondItem="bmN-Qh-6Jf" secondAttribute="trailing" id="dzT-uH-tIO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="bmN-Qh-6Jf" id="cEC-MT-w7Q"/>
                         <outlet property="start" destination="XSy-Od-BzF" id="89u-6L-XCU"/>
                         <segue destination="xXc-PZ-o1Q" kind="presentation" identifier="presentCollectionViewController" modalPresentationStyle="overCurrentContext" id="CN3-oZ-NgG"/>
-                        <segue destination="PCX-Tx-6TR" kind="presentation" identifier="testModal" id="OIW-eB-Tx7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,24 +138,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Sz-Ms-UOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1092" y="428.63568215892059"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ma7-TE-3C9">
-            <objects>
-                <viewController id="PCX-Tx-6TR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BBh-jM-u89"/>
-                        <viewControllerLayoutGuide type="bottom" id="FP7-1D-Bnh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SzC-XK-Bnd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s26-cj-z4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="303" y="1227"/>
         </scene>
         <!--Product Collection View Controller-->
         <scene sceneID="Tmr-Hq-8iQ">
@@ -317,12 +305,16 @@ Try moving closer.</string>
                                         <constraints>
                                             <constraint firstItem="ON8-8l-SpL" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leadingMargin" id="48V-u2-AKX"/>
                                             <constraint firstAttribute="trailing" secondItem="Bgh-TN-ZKn" secondAttribute="trailing" id="8kk-2z-nB6"/>
+                                            <constraint firstItem="Bgh-TN-ZKn" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="BdM-er-8tJ"/>
                                             <constraint firstAttribute="trailing" secondItem="aeQ-Vd-mLR" secondAttribute="trailing" id="CXL-UO-ZWM"/>
                                             <constraint firstItem="Bgh-TN-ZKn" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="DxA-ID-zFx"/>
                                             <constraint firstItem="aeQ-Vd-mLR" firstAttribute="top" secondItem="Bgh-TN-ZKn" secondAttribute="bottom" id="XZl-74-Pra"/>
                                             <constraint firstItem="Bgh-TN-ZKn" firstAttribute="top" secondItem="3bb-fD-qFE" secondAttribute="top" id="ZE6-gi-tfi"/>
                                             <constraint firstItem="aeQ-Vd-mLR" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="fyh-a1-Vrj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bgh-TN-ZKn" secondAttribute="trailing" id="gQS-kN-6oV"/>
+                                            <constraint firstItem="Bgh-TN-ZKn" firstAttribute="top" secondItem="3bb-fD-qFE" secondAttribute="top" id="iSL-0T-Ry6"/>
                                             <constraint firstItem="aeQ-Vd-mLR" firstAttribute="top" secondItem="ON8-8l-SpL" secondAttribute="bottom" constant="206" id="pFd-wk-V04"/>
+                                            <constraint firstItem="aeQ-Vd-mLR" firstAttribute="top" secondItem="Bgh-TN-ZKn" secondAttribute="bottom" id="uIw-rI-ZTb"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ON8-8l-SpL" secondAttribute="trailing" id="wSW-O3-7CP"/>
                                             <constraint firstAttribute="bottom" secondItem="aeQ-Vd-mLR" secondAttribute="bottom" constant="-8" id="xrV-FA-67w"/>
                                         </constraints>

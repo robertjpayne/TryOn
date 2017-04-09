@@ -34,9 +34,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func loadProduct(_ product:Product) {
         
         self.product = product
-        setupDetail()
+        setupDetailUI()
+        setupDetailScene()
         self.setupMainScene()
-
     }
     
     //MARK: Setup
@@ -84,6 +84,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         distanceWarningLabel.layer.shadowRadius = 3
         distanceWarningLabel.layer.shadowOpacity = 0.7
         distanceWarningLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        //This can be placed in animateOnInterval() for testing with a slider:
+        self.updateScale()
     }
     
     
@@ -92,7 +95,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     //MARK: Detail
     //(box at bottom of the screen providing additional info about product)
     
-    func setupDetail(){
+    func setupDetailUI(){
         
         detailContainer.layer.cornerRadius = 10
         detailContainer.layer.masksToBounds = true
@@ -108,25 +111,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
         //Title
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.text = product.title
-        
-        setupStars()
-        setupDetailScene()
-    }
-    
-    func setupStars(){
-//        let numberOfStars = 4
-//        //Clears old value
-//        for view in starsStackView.arrangedSubviews {
-//            view.removeFromSuperview()
-//        }
-//        //Updates new value
-//        for _ in 0...numberOfStars+1 {
-//            let imageView = UIImageView(image: #imageLiteral(resourceName: "star-reviews"))
-//            imageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
-//            imageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
-//            starsStackView.addArrangedSubview(imageView)
-//        }
-
     }
 
     func setupDetailScene(){
@@ -157,10 +141,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         let s = 2
         self.detailNode.scale = SCNVector3(s,s,s)
-//        detailNode.pivot = SCNMatrix4MakeRotation(Float(M_PI_2), 1, 0, 0)
-        
         detailNode.pivot = SCNMatrix4MakeRotation(.pi/2, 1, 0, 0)
-
         
     }
     
@@ -172,27 +153,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: animationInterval, animations: {
             self.updateEuler()
             self.pinGlassesToNose()
-            
-            //This can be placed in animateOnInterval() if you want to test it out with the slider:
-            self.updateScale()
         })
-        
-        //        displayNumberLabels()
     }
     
     func updateScale() {
         var s:Double = 0
-        //Tweaks
-//        switch currentGlasses {
-//        case .purple:
-//            s = 14
-//        case .classyRims:
-//            s = 6.6
-//        case .topanga:
-//            s = 14
-//        }
         s = 6.6
-
         productNode.scale = SCNVector3(s,s,s)
     }
     
@@ -203,21 +169,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
             var _pitch = Float(pitch)//Float(pitch)/57
             var _yaw = -Float(yaw)
             var _roll = -Float(roll)
-            //            print(pitch)
-            
-//            //Tweaks
-//            switch currentGlasses {
-//            case .purple, .topanga:
-//                _yaw = _yaw - 0.2
-//            case .classyRims:
-//                _pitch += 300
-//            }
             _pitch += 300
 
             productNode.eulerAngles = SCNVector3(_pitch, _yaw, _roll)
         }
-        
-        
     }
     
     func pinGlassesToNose(){
@@ -228,30 +183,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
         var _x = pointX.doubleValue
         var _y = pointY.doubleValue
         var _z = zPos.doubleValue
-        
-        
-        //Show error if face is too far away.
-        let tooFar = _z < 480
-        distanceWarningLabel.isHidden = tooFar
-        print(_z)
-        
-        //        print("x:\(pointX) y:\(pointY) z:\(zPos)")
         let screenWidth = Double(480)
         let screenHeight = Double(640)
         
+        //Show error if face is too far away.
+        let tooFar = _z < 450
+        distanceWarningLabel.isHidden = tooFar
+        
         _x -= screenWidth/2
         _y -= screenHeight/2
-        //        print("x:\(_x) y:\(_y) z:\(_z)")
-        
-        //Tweaks
-//        switch currentGlasses {
-//        case .purple, .topanga:
-//            _y -= 50
-//            _z += 92
-//        case .classyRims:
-//            _y += 38
-//            _z += 200
-//        }
+
         _y += 38
         _z += 200
         
@@ -259,12 +200,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         _x /= 8
         _y /= -8
         _z /= -8
-        //        print("pinning to nose: x:\(_x) y:\(_y) z:\(_z)")
-//        _x = 200
-//        _y = 0
         
         productNode.position = SCNVector3(_x, _y, _z)
-        
     }
-
 }
