@@ -18,6 +18,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var distanceWarningLabel: UILabel!
     
     var productNode = SCNNode()
     var detailNode = SCNNode()
@@ -77,6 +78,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
         scnView.backgroundColor = UIColor.clear
 
         let _ = Timer.scheduledTimer(timeInterval: animationInterval, target: self, selector: #selector(animateOnInterval), userInfo: nil, repeats: true)
+        
+        //misc ui
+        distanceWarningLabel.layer.shadowColor = UIColor.black.cgColor
+        distanceWarningLabel.layer.shadowRadius = 3
+        distanceWarningLabel.layer.shadowOpacity = 0.7
+        distanceWarningLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
     
@@ -221,6 +228,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
         var _x = pointX.doubleValue
         var _y = pointY.doubleValue
         var _z = zPos.doubleValue
+        
+        
+        //Show error if face is too far away.
+        let tooFar = _z < 480
+        distanceWarningLabel.isHidden = tooFar
+        print(_z)
         
         //        print("x:\(pointX) y:\(pointY) z:\(zPos)")
         let screenWidth = Double(480)

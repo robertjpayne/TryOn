@@ -300,16 +300,30 @@
                                                         <constraint firstAttribute="trailing" secondItem="WHc-PY-Gpf" secondAttribute="trailing" constant="8" id="yTT-vN-VUr"/>
                                                     </constraints>
                                                 </view>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-8l-SpL">
+                                                    <rect key="frame" x="8" y="214" width="359" height="70"/>
+                                                    <string key="text">Too far from camera.
+
+Try moving closer.</string>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="ON8-8l-SpL" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leadingMargin" id="48V-u2-AKX"/>
                                             <constraint firstAttribute="trailing" secondItem="Bgh-TN-ZKn" secondAttribute="trailing" id="8kk-2z-nB6"/>
                                             <constraint firstAttribute="trailing" secondItem="aeQ-Vd-mLR" secondAttribute="trailing" id="CXL-UO-ZWM"/>
                                             <constraint firstItem="Bgh-TN-ZKn" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="DxA-ID-zFx"/>
                                             <constraint firstItem="aeQ-Vd-mLR" firstAttribute="top" secondItem="Bgh-TN-ZKn" secondAttribute="bottom" id="XZl-74-Pra"/>
                                             <constraint firstItem="Bgh-TN-ZKn" firstAttribute="top" secondItem="3bb-fD-qFE" secondAttribute="top" id="ZE6-gi-tfi"/>
                                             <constraint firstItem="aeQ-Vd-mLR" firstAttribute="leading" secondItem="3bb-fD-qFE" secondAttribute="leading" id="fyh-a1-Vrj"/>
+                                            <constraint firstItem="aeQ-Vd-mLR" firstAttribute="top" secondItem="ON8-8l-SpL" secondAttribute="bottom" constant="206" id="pFd-wk-V04"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ON8-8l-SpL" secondAttribute="trailing" id="wSW-O3-7CP"/>
                                             <constraint firstAttribute="bottom" secondItem="aeQ-Vd-mLR" secondAttribute="bottom" constant="-8" id="xrV-FA-67w"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="667"/>
@@ -317,6 +331,7 @@
                                             <outlet property="buyButton" destination="oiY-MA-rxF" id="vhD-Zt-p74"/>
                                             <outlet property="detailContainer" destination="aeQ-Vd-mLR" id="ihC-xe-GTI"/>
                                             <outlet property="detailScnView" destination="XUl-54-DaC" id="mdx-EQ-geR"/>
+                                            <outlet property="distanceWarningLabel" destination="ON8-8l-SpL" id="4cz-iZ-emk"/>
                                             <outlet property="reviewCountLabel" destination="i4Q-Hl-DSl" id="eZe-og-oGX"/>
                                             <outlet property="scnView" destination="Bgh-TN-ZKn" id="jDp-Iy-2zg"/>
                                             <outlet property="starsStackView" destination="l3n-5f-BnB" id="7UD-fb-yke"/>
