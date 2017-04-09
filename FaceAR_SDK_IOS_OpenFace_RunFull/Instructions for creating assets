@@ -1,0 +1,1 @@
+If using Sketchup, you'll need to hit "scale definition" and "change axes" to make sure all files are the same. Then you can export as .dae file and drag it into the art.scnassets folder
