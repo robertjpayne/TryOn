@@ -38,12 +38,9 @@
 		83B04FB31D2B8DAD008A9370 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B04FB21D2B8DAD008A9370 /* opencv2.framework */; };
 		9504999C1E9844A900FFCB7A /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */; };
 		9504999E1E984AE100FFCB7A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */; };
-		950499A01E98B13E00FFCB7A /* Utilities+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999F1E98B13E00FFCB7A /* Utilities+Extensions.swift */; };
 		950499A41E99803B00FFCB7A /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950499A31E99803B00FFCB7A /* LocalData.swift */; };
 		950499AD1E9A0CB500FFCB7A /* Instructions for creating assets in Resources */ = {isa = PBXBuildFile; fileRef = 950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */; };
-		955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE7351E53F448007D1A78 /* GameViewController.swift */; };
 		955BE7381E53F48A007D1A78 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 955BE7371E53F48A007D1A78 /* art.scnassets */; };
-		955BE73B1E53FA25007D1A78 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE73A1E53FA25007D1A78 /* Config.swift */; };
 		95FB003E1E58F2DB000D73BF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB003D1E58F2DB000D73BF /* Product.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,8 +95,8 @@
 		83B04F751D2B8BF4008A9370 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83B04F771D2B8BF4008A9370 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83B04F781D2B8BF4008A9370 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		83B04F7A1D2B8BF4008A9370 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83B04F7B1D2B8BF4008A9370 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		83B04F7A1D2B8BF4008A9370 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = FaceAR_SDK_IOS_OpenFace_RunFull/ViewController.h; sourceTree = "<group>"; };
+		83B04F7B1D2B8BF4008A9370 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = FaceAR_SDK_IOS_OpenFace_RunFull/ViewController.mm; sourceTree = "<group>"; };
 		83B04F7E1D2B8BF4008A9370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83B04F811D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodel; sourceTree = "<group>"; };
 		83B04F831D2B8BF4008A9370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,13 +115,10 @@
 		83B04FB21D2B8DAD008A9370 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = FaceAR_SDK_IOS_OpenFace_RunFull/opencv2.framework; sourceTree = "<group>"; };
 		9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
 		9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
-		9504999F1E98B13E00FFCB7A /* Utilities+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Utilities+Extensions.swift"; sourceTree = "<group>"; };
 		950499A31E99803B00FFCB7A /* LocalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Instructions for creating assets"; sourceTree = "<group>"; };
 		955BE7341E53F447007D1A78 /* FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h"; sourceTree = "<group>"; };
-		955BE7351E53F448007D1A78 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		955BE7371E53F48A007D1A78 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		955BE73A1E53FA25007D1A78 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		95FB003D1E58F2DB000D73BF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,12 +252,14 @@
 		83B04F731D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */ = {
 			isa = PBXGroup;
 			children = (
-				955BE7391E53F494007D1A78 /* SceneKit Stuff */,
+				950499AE1E9C1A9800FFCB7A /* Camera */,
 				95FB003C1E58F281000D73BF /* Model */,
+				955BE7371E53F48A007D1A78 /* art.scnassets */,
 				83B04F771D2B8BF4008A9370 /* AppDelegate.h */,
 				83B04F781D2B8BF4008A9370 /* AppDelegate.mm */,
-				83B04F7A1D2B8BF4008A9370 /* ViewController.h */,
-				83B04F7B1D2B8BF4008A9370 /* ViewController.mm */,
+				9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */,
+				9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */,
+				950499A31E99803B00FFCB7A /* LocalData.swift */,
 				83B04F7D1D2B8BF4008A9370 /* Main.storyboard */,
 				83B04F831D2B8BF4008A9370 /* Assets.xcassets */,
 				83B04F851D2B8BF4008A9370 /* LaunchScreen.storyboard */,
@@ -325,18 +321,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		955BE7391E53F494007D1A78 /* SceneKit Stuff */ = {
+		950499AE1E9C1A9800FFCB7A /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				955BE7351E53F448007D1A78 /* GameViewController.swift */,
-				9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */,
-				9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */,
-				955BE7371E53F48A007D1A78 /* art.scnassets */,
-				955BE73A1E53FA25007D1A78 /* Config.swift */,
-				9504999F1E98B13E00FFCB7A /* Utilities+Extensions.swift */,
-				950499A31E99803B00FFCB7A /* LocalData.swift */,
+				83B04F7A1D2B8BF4008A9370 /* ViewController.h */,
+				83B04F7B1D2B8BF4008A9370 /* ViewController.mm */,
 			);
-			name = "SceneKit Stuff";
+			name = Camera;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		95FB003C1E58F281000D73BF /* Model */ = {
@@ -489,16 +481,13 @@
 				9504999E1E984AE100FFCB7A /* ProductCollectionViewCell.swift in Sources */,
 				83B04F821D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodeld in Sources */,
 				8304A0C81D2BBD1100E2E96B /* CCNF_patch_expert.cpp in Sources */,
-				955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */,
 				833EB6C91D2E0B3A0068AB39 /* GazeEstimation.cpp in Sources */,
 				8304A0CE1D2BBD1100E2E96B /* Patch_experts.cpp in Sources */,
 				8304A0D01D2BBD1100E2E96B /* PDM.cpp in Sources */,
 				8304A0D21D2BBD1100E2E96B /* SVR_patch_expert.cpp in Sources */,
 				83B04F7C1D2B8BF4008A9370 /* ViewController.mm in Sources */,
-				955BE73B1E53FA25007D1A78 /* Config.swift in Sources */,
 				83B04F791D2B8BF4008A9370 /* AppDelegate.mm in Sources */,
 				8304A0CB1D2BBD1100E2E96B /* LandmarkDetectorModel.cpp in Sources */,
-				950499A01E98B13E00FFCB7A /* Utilities+Extensions.swift in Sources */,
 				950499A41E99803B00FFCB7A /* LocalData.swift in Sources */,
 				8304A0D11D2BBD1100E2E96B /* stdafx.cpp in Sources */,
 				8304A0CC1D2BBD1100E2E96B /* LandmarkDetectorParameters.cpp in Sources */,
