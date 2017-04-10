@@ -40,7 +40,6 @@
 		9504999E1E984AE100FFCB7A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */; };
 		950499A01E98B13E00FFCB7A /* Utilities+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504999F1E98B13E00FFCB7A /* Utilities+Extensions.swift */; };
 		950499A41E99803B00FFCB7A /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950499A31E99803B00FFCB7A /* LocalData.swift */; };
-		950499AB1E99E39E00FFCB7A /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 950499AA1E99E39E00FFCB7A /* TODO */; };
 		950499AD1E9A0CB500FFCB7A /* Instructions for creating assets in Resources */ = {isa = PBXBuildFile; fileRef = 950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */; };
 		955BE7361E53F448007D1A78 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BE7351E53F448007D1A78 /* GameViewController.swift */; };
 		955BE7381E53F48A007D1A78 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 955BE7371E53F48A007D1A78 /* art.scnassets */; };
@@ -121,7 +120,6 @@
 		9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		9504999F1E98B13E00FFCB7A /* Utilities+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Utilities+Extensions.swift"; sourceTree = "<group>"; };
 		950499A31E99803B00FFCB7A /* LocalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
-		950499AA1E99E39E00FFCB7A /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Instructions for creating assets"; sourceTree = "<group>"; };
 		955BE7341E53F447007D1A78 /* FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceAR_SDK_IOS_OpenFace_RunFull-Bridging-Header.h"; sourceTree = "<group>"; };
 		955BE7351E53F448007D1A78 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 				83B04F831D2B8BF4008A9370 /* Assets.xcassets */,
 				83B04F851D2B8BF4008A9370 /* LaunchScreen.storyboard */,
 				83B04F881D2B8BF4008A9370 /* Info.plist */,
-				950499AA1E99E39E00FFCB7A /* TODO */,
 				950499AC1E9A0CB400FFCB7A /* Instructions for creating assets */,
 				83B04F801D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodeld */,
 				83B04F741D2B8BF4008A9370 /* Supporting Files */,
@@ -461,7 +458,6 @@
 				955BE7381E53F48A007D1A78 /* art.scnassets in Resources */,
 				8304A1951D2BF7B200E2E96B /* model in Resources */,
 				83B04F871D2B8BF4008A9370 /* LaunchScreen.storyboard in Resources */,
-				950499AB1E99E39E00FFCB7A /* TODO in Resources */,
 				83B04F841D2B8BF4008A9370 /* Assets.xcassets in Resources */,
 				83B04F7F1D2B8BF4008A9370 /* Main.storyboard in Resources */,
 			);
