@@ -3,7 +3,7 @@
 ![Swift 2.3.x](https://img.shields.io/badge/Swift-3.0-orange.svg)![Platform iOS.x](https://img.shields.io/badge/Platform-iOS-blue.svg)
 <p align="center">
   <img src="./imgs/logo_with_reflection.png" alt=""/>
-  <div>asdfasdfsafasdfasdf</div>
+  <div>asdf</div>
   <img src="./imgs/final_TryOn.gif" alt=""/>
 </p>
 
