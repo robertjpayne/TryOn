@@ -1,6 +1,6 @@
 # TryOn
 
-![Swift 2.3.x](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift 2.3.x](https://img.shields.io/badge/Swift-3.0-orange.svg)![Platform iOS.x](https://img.shields.io/badge/Platform-iOS-blue.svg)
 
 <img src="./imgs/logo_with_reflection.png" alt="" />
 ()
