@@ -2,7 +2,7 @@
 
 ![Swift 2.3.x](https://img.shields.io/badge/Swift-3.0-orange.svg)![Platform iOS.x](https://img.shields.io/badge/Platform-iOS-blue.svg)
 <p align="center">
-  <img src="./imgs/logo_with_reflection.png" alt=""/>
+  <img src="./imgs/logo_text.png" alt=""/>
   <img src="" alt="" height="0" width="130"/>
   <img src="./imgs/final_TryOn.gif" alt=""/>
 </p>
