@@ -196,7 +196,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         _y += 38
         _z += 200
         
-        //Fudge and flips:
+        //Adjustments
         _x /= 8
         _y /= -8
         _z /= -8
