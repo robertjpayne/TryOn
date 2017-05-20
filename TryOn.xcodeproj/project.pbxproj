@@ -104,8 +104,8 @@
 		83B04F751D2B8BF4008A9370 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83B04F771D2B8BF4008A9370 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83B04F781D2B8BF4008A9370 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		83B04F7A1D2B8BF4008A9370 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = FaceAR_SDK_IOS_OpenFace_RunFull/ViewController.h; sourceTree = "<group>"; };
-		83B04F7B1D2B8BF4008A9370 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = FaceAR_SDK_IOS_OpenFace_RunFull/ViewController.mm; sourceTree = "<group>"; };
+		83B04F7A1D2B8BF4008A9370 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		83B04F7B1D2B8BF4008A9370 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		83B04F7E1D2B8BF4008A9370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83B04F811D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaceAR_SDK_IOS_OpenFace_RunFull.xcdatamodel; sourceTree = "<group>"; };
 		83B04F831D2B8BF4008A9370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -268,11 +268,12 @@
 		83B04F731D2B8BF4008A9370 /* FaceAR_SDK_IOS_OpenFace_RunFull */ = {
 			isa = PBXGroup;
 			children = (
-				950499AE1E9C1A9800FFCB7A /* Camera */,
 				95FB003C1E58F281000D73BF /* Model */,
 				955BE7371E53F48A007D1A78 /* art.scnassets */,
 				83B04F771D2B8BF4008A9370 /* AppDelegate.h */,
 				83B04F781D2B8BF4008A9370 /* AppDelegate.mm */,
+				83B04F7A1D2B8BF4008A9370 /* ViewController.h */,
+				83B04F7B1D2B8BF4008A9370 /* ViewController.mm */,
 				9504999B1E9844A900FFCB7A /* ProductCollectionViewController.swift */,
 				9504999D1E984AE100FFCB7A /* ProductCollectionViewCell.swift */,
 				950499A31E99803B00FFCB7A /* LocalData.swift */,
@@ -338,16 +339,6 @@
 				95A0588AAD9A43A0C0C82F15 /* Pods_TryOnUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		950499AE1E9C1A9800FFCB7A /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				83B04F7A1D2B8BF4008A9370 /* ViewController.h */,
-				83B04F7B1D2B8BF4008A9370 /* ViewController.mm */,
-			);
-			name = Camera;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		95FB003C1E58F281000D73BF /* Model */ = {
